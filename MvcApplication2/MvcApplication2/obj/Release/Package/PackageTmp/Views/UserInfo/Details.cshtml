@@ -1,0 +1,204 @@
+﻿@model MvcApplication2.Userinfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Userinfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Userid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Userid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Deptid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Deptid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Brithday)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brithday)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telephone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telephone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Duty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Duty)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NativePlace)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NativePlace)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDCard)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDCard)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mobile)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mobile)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Educated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Educated)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Polity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Polity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Specialty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Specialty)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAtt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAtt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Isovertime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Isovertime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Isrest)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Isrest)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MgFlag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MgFlag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cardnum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cardnum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machineid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machineid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserFlag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserFlag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Groupid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Groupid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.workdaylong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.workdaylong)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

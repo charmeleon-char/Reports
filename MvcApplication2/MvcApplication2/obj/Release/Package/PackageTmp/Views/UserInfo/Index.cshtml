@@ -1,0 +1,70 @@
+﻿.@model IEnumerable<MvcApplication2.Controllers.UserInfoController.horas>
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "Reporte de Horas Trabajadas";
+  
+}
+
+
+<br/>
+@{
+    if (IsPost)
+    {
+<div>
+ 
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add((model => model.Name)).Filterable(true);
+    columns.Add((model => model.Genero)).Filterable(true);
+    columns.Add((model => model.Deptid)).Filterable(true);
+
+    columns.Add(model => model.cardnum).Filterable(true);
+}).WithPaging(10)
+   
+        
+    
+
+</div>
+      }
+    else
+  {
+<h2>Search</h2>
+<br />
+   <span>Date</span>
+   <input type="text" name="selectDate" id="selectDate">
+   <span>Range Date</span>
+  <input type="text" name="daterange"  />
+   <input type="button" id="start" value="show" />
+   
+        
+    }
+}
+<script>
+   // $("#grid-cool").bootgrid();
+    $(function () {
+        $('input[name="daterange"]').daterangepicker({ dateFormat: "yy/mm/dd" }).daterangepicker("setDate", new Date());
+    });
+    $(function () {
+        $('input[name="selectDate"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true
+        });
+    });
+    $('#start').click(function () {
+        var selectDate = $('input[name="selectDate"]').val();
+        console.log(selectDate);
+
+        $.ajax({
+            url: '/UserInfo/Search/' + selectDate.replace(/\//g, "-"),
+            method: 'GET'
+        }).done(function (response) {
+            console.log(response);
+        });
+
+    });
+ 
+</script>
+<script>
+   
+</script>

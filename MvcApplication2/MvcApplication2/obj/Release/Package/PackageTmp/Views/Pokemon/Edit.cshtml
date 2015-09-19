@@ -1,0 +1,67 @@
+﻿@model MvcApplication2.OPinfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OPinfo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Opid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Opid)
+            @Html.ValidationMessageFor(model => model.Opid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pwd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pwd)
+            @Html.ValidationMessageFor(model => model.Pwd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Authority)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Authority)
+            @Html.ValidationMessageFor(model => model.Authority)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Deptpower)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Deptpower)
+            @Html.ValidationMessageFor(model => model.Deptpower)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

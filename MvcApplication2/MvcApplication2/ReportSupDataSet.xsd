@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportSupDataSet" targetNamespace="http://tempuri.org/ReportSupDataSet.xsd" xmlns:mstns="http://tempuri.org/ReportSupDataSet.xsd" xmlns="http://tempuri.org/ReportSupDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ReportSupConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ReportSupConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ReportSupConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_EmployTableAdapter" GeneratorDataComponentClassName="view_EmployTableAdapter" Name="view_Employ" UserDataComponentName="view_EmployTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ReportSupConnectionString (Web.config)" DbObjectName="ReportSup.dbo.view_Employ" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT userId, Name, horaEntrada, horasalida, horaTrabajada FROM dbo.view_Employ</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="userId" DataSetColumn="userId" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="horaEntrada" DataSetColumn="horaEntrada" />
+              <Mapping SourceColumn="horasalida" DataSetColumn="horasalida" />
+              <Mapping SourceColumn="horaTrabajada" DataSetColumn="horaTrabajada" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportSupDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ReportSupDataSet" msprop:Generator_UserDSName="ReportSupDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="view_Employ" msprop:Generator_TableClassName="view_EmployDataTable" msprop:Generator_TableVarName="tableview_Employ" msprop:Generator_TablePropName="view_Employ" msprop:Generator_RowDeletingName="view_EmployRowDeleting" msprop:Generator_RowChangingName="view_EmployRowChanging" msprop:Generator_RowEvHandlerName="view_EmployRowChangeEventHandler" msprop:Generator_RowDeletedName="view_EmployRowDeleted" msprop:Generator_UserTableName="view_Employ" msprop:Generator_RowChangedName="view_EmployRowChanged" msprop:Generator_RowEvArgName="view_EmployRowChangeEvent" msprop:Generator_RowClassName="view_EmployRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userId" msprop:Generator_ColumnVarNameInTable="columnuserId" msprop:Generator_ColumnPropNameInRow="userId" msprop:Generator_ColumnPropNameInTable="userIdColumn" msprop:Generator_UserColumnName="userId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="horaEntrada" msprop:Generator_ColumnVarNameInTable="columnhoraEntrada" msprop:Generator_ColumnPropNameInRow="horaEntrada" msprop:Generator_ColumnPropNameInTable="horaEntradaColumn" msprop:Generator_UserColumnName="horaEntrada" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="horasalida" msprop:Generator_ColumnVarNameInTable="columnhorasalida" msprop:Generator_ColumnPropNameInRow="horasalida" msprop:Generator_ColumnPropNameInTable="horasalidaColumn" msprop:Generator_UserColumnName="horasalida" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="horaTrabajada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnhoraTrabajada" msprop:Generator_ColumnPropNameInRow="horaTrabajada" msprop:Generator_ColumnPropNameInTable="horaTrabajadaColumn" msprop:Generator_UserColumnName="horaTrabajada" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

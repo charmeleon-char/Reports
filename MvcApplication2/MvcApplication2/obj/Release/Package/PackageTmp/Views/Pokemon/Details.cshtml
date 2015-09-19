@@ -1,0 +1,50 @@
+﻿@model MvcApplication2.OPinfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OPinfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Opid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Opid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Authority)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Authority)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Deptpower)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Deptpower)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

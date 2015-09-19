@@ -1,0 +1,53 @@
+﻿@model MvcApplication2.OPinfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>OPinfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Opid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Opid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Authority)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Authority)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Deptpower)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Deptpower)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

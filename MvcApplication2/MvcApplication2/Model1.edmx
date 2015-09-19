@@ -1,0 +1,1953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ReportSupModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ReportSupModelStoreContainer">
+          <EntitySet Name="AddTimeSet" EntityType="ReportSupModel.Store.AddTimeSet" store:Type="Tables" store:Schema="dbo" store:Name="AddTimeSet">
+            <DefiningQuery>SELECT 
+      [AddTimeSet].[Userid] AS [Userid], 
+      [AddTimeSet].[date] AS [date], 
+      [AddTimeSet].[TimeID] AS [TimeID], 
+      [AddTimeSet].[AddTime] AS [AddTime]
+      FROM [dbo].[AddTimeSet] AS [AddTimeSet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BasePara" EntityType="ReportSupModel.Store.BasePara" store:Type="Tables" store:Schema="dbo" store:Name="BasePara">
+            <DefiningQuery>SELECT 
+      [BasePara].[Company] AS [Company], 
+      [BasePara].[TwoDay] AS [TwoDay], 
+      [BasePara].[NoClockIn] AS [NoClockIn], 
+      [BasePara].[NoClockOut] AS [NoClockOut], 
+      [BasePara].[LateTime] AS [LateTime], 
+      [BasePara].[LeaveTime] AS [LeaveTime], 
+      [BasePara].[ISOverTime] AS [ISOverTime], 
+      [BasePara].[OverTime] AS [OverTime], 
+      [BasePara].[WorkDayLong] AS [WorkDayLong], 
+      [BasePara].[WOverTime] AS [WOverTime], 
+      [BasePara].[HOverTime] AS [HOverTime], 
+      [BasePara].[FOverTime] AS [FOverTime], 
+      [BasePara].[IsAutoDownRec] AS [IsAutoDownRec], 
+      [BasePara].[DownRecTime] AS [DownRecTime], 
+      [BasePara].[OvertimeIn] AS [OvertimeIn], 
+      [BasePara].[IsovertimeIn] AS [IsovertimeIn], 
+      [BasePara].[DeductIn] AS [DeductIn], 
+      [BasePara].[DeductOut] AS [DeductOut]
+      FROM [dbo].[BasePara] AS [BasePara]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Checkinout" EntityType="ReportSupModel.Store.Checkinout" store:Type="Tables" store:Schema="dbo" store:Name="Checkinout">
+            <DefiningQuery>SELECT 
+      [Checkinout].[Logid] AS [Logid], 
+      [Checkinout].[Userid] AS [Userid], 
+      [Checkinout].[CheckTime] AS [CheckTime], 
+      [Checkinout].[CheckType] AS [CheckType], 
+      [Checkinout].[Sensorid] AS [Sensorid], 
+      [Checkinout].[Checked] AS [Checked], 
+      [Checkinout].[WorkType] AS [WorkType], 
+      [Checkinout].[AttFlag] AS [AttFlag], 
+      [Checkinout].[OpenDoorFlag] AS [OpenDoorFlag]
+      FROM [dbo].[Checkinout] AS [Checkinout]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CheckLog" EntityType="ReportSupModel.Store.CheckLog" store:Type="Tables" store:Schema="dbo" store:Name="CheckLog">
+            <DefiningQuery>SELECT 
+      [CheckLog].[Logid] AS [Logid], 
+      [CheckLog].[Userid] AS [Userid], 
+      [CheckLog].[Checktime] AS [Checktime], 
+      [CheckLog].[Checktype] AS [Checktype], 
+      [CheckLog].[Sensorid] AS [Sensorid], 
+      [CheckLog].[OPFlag] AS [OPFlag], 
+      [CheckLog].[Whys] AS [Whys], 
+      [CheckLog].[OPname] AS [OPname], 
+      [CheckLog].[DTime] AS [DTime]
+      FROM [dbo].[CheckLog] AS [CheckLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DefineField" EntityType="ReportSupModel.Store.DefineField" store:Type="Tables" store:Schema="dbo" store:Name="DefineField">
+            <DefiningQuery>SELECT 
+      [DefineField].[Fieldid] AS [Fieldid], 
+      [DefineField].[FieldName] AS [FieldName], 
+      [DefineField].[FieldValue] AS [FieldValue]
+      FROM [dbo].[DefineField] AS [DefineField]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Dept" EntityType="ReportSupModel.Store.Dept" store:Type="Tables" store:Schema="dbo" store:Name="Dept">
+            <DefiningQuery>SELECT 
+      [Dept].[Deptid] AS [Deptid], 
+      [Dept].[DeptName] AS [DeptName], 
+      [Dept].[SupDeptid] AS [SupDeptid]
+      FROM [dbo].[Dept] AS [Dept]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FingerClient" EntityType="ReportSupModel.Store.FingerClient" store:Type="Tables" store:Schema="dbo" store:Name="FingerClient">
+            <DefiningQuery>SELECT 
+      [FingerClient].[Clientid] AS [Clientid], 
+      [FingerClient].[Linkmode] AS [Linkmode], 
+      [FingerClient].[IPaddress] AS [IPaddress], 
+      [FingerClient].[ClientName] AS [ClientName], 
+      [FingerClient].[ClientNumber] AS [ClientNumber], 
+      [FingerClient].[Baudrate] AS [Baudrate], 
+      [FingerClient].[RecStatus] AS [RecStatus], 
+      [FingerClient].[Floorid] AS [Floorid], 
+      [FingerClient].[MachineType] AS [MachineType], 
+      [FingerClient].[DeviceType] AS [DeviceType], 
+      [FingerClient].[CommPWD] AS [CommPWD], 
+      [FingerClient].[CommPort] AS [CommPort]
+      FROM [dbo].[FingerClient] AS [FingerClient]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Holiday" EntityType="ReportSupModel.Store.Holiday" store:Type="Tables" store:Schema="dbo" store:Name="Holiday">
+            <DefiningQuery>SELECT 
+      [Holiday].[Holidayid] AS [Holidayid], 
+      [Holiday].[Name] AS [Name], 
+      [Holiday].[BDate] AS [BDate], 
+      [Holiday].[Days] AS [Days]
+      FROM [dbo].[Holiday] AS [Holiday]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LeaveClass" EntityType="ReportSupModel.Store.LeaveClass" store:Type="Tables" store:Schema="dbo" store:Name="LeaveClass">
+            <DefiningQuery>SELECT 
+      [LeaveClass].[Classid] AS [Classid], 
+      [LeaveClass].[Classname] AS [Classname], 
+      [LeaveClass].[ViewColor] AS [ViewColor], 
+      [LeaveClass].[Showas] AS [Showas]
+      FROM [dbo].[LeaveClass] AS [LeaveClass]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MemStat" EntityType="ReportSupModel.Store.MemStat" store:Type="Tables" store:Schema="dbo" store:Name="MemStat">
+            <DefiningQuery>SELECT 
+      [MemStat].[Lsh] AS [Lsh], 
+      [MemStat].[Userid] AS [Userid], 
+      [MemStat].[Udept] AS [Udept], 
+      [MemStat].[Uname] AS [Uname], 
+      [MemStat].[Normal] AS [Normal], 
+      [MemStat].[Actual] AS [Actual], 
+      [MemStat].[Latetime] AS [Latetime], 
+      [MemStat].[Earlytime] AS [Earlytime], 
+      [MemStat].[Absenttime] AS [Absenttime], 
+      [MemStat].[Overtime] AS [Overtime], 
+      [MemStat].[Noin] AS [Noin], 
+      [MemStat].[Noout] AS [Noout], 
+      [MemStat].[Awaytime] AS [Awaytime], 
+      [MemStat].[BLeave] AS [BLeave], 
+      [MemStat].[Leave] AS [Leave], 
+      [MemStat].[Freeovertime] AS [Freeovertime], 
+      [MemStat].[Worktime] AS [Worktime], 
+      [MemStat].[Attrate] AS [Attrate]
+      FROM [dbo].[MemStat] AS [MemStat]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OPinfo" EntityType="ReportSupModel.Store.OPinfo" store:Type="Tables" store:Schema="dbo" store:Name="OPinfo">
+            <DefiningQuery>SELECT 
+      [OPinfo].[Opid] AS [Opid], 
+      [OPinfo].[Name] AS [Name], 
+      [OPinfo].[Pwd] AS [Pwd], 
+      [OPinfo].[Authority] AS [Authority], 
+      [OPinfo].[Deptpower] AS [Deptpower]
+      FROM [dbo].[OPinfo] AS [OPinfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OPLog" EntityType="ReportSupModel.Store.OPLog" store:Type="Tables" store:Schema="dbo" store:Name="OPLog">
+            <DefiningQuery>SELECT 
+      [OPLog].[Logid] AS [Logid], 
+      [OPLog].[OPid] AS [OPid], 
+      [OPLog].[Optime] AS [Optime], 
+      [OPLog].[OPlog] AS [OPlog]
+      FROM [dbo].[OPLog] AS [OPLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OutProg" EntityType="ReportSupModel.Store.OutProg" store:Type="Tables" store:Schema="dbo" store:Name="OutProg">
+            <DefiningQuery>SELECT 
+      [OutProg].[Progid] AS [Progid], 
+      [OutProg].[ProgName] AS [ProgName], 
+      [OutProg].[ProgPath] AS [ProgPath]
+      FROM [dbo].[OutProg] AS [OutProg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Schedule" EntityType="ReportSupModel.Store.Schedule" store:Type="Tables" store:Schema="dbo" store:Name="Schedule">
+            <DefiningQuery>SELECT 
+      [Schedule].[Schid] AS [Schid], 
+      [Schedule].[Schname] AS [Schname], 
+      [Schedule].[Cycles] AS [Cycles], 
+      [Schedule].[Units] AS [Units], 
+      [Schedule].[AutoClass] AS [AutoClass]
+      FROM [dbo].[Schedule] AS [Schedule]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StatItems" EntityType="ReportSupModel.Store.StatItems" store:Type="Tables" store:Schema="dbo" store:Name="StatItems">
+            <DefiningQuery>SELECT 
+      [StatItems].[Itemid] AS [Itemid], 
+      [StatItems].[ItemName] AS [ItemName], 
+      [StatItems].[Units] AS [Units], 
+      [StatItems].[MinUnit] AS [MinUnit], 
+      [StatItems].[SRControl] AS [SRControl], 
+      [StatItems].[IsAddup] AS [IsAddup], 
+      [StatItems].[IsTimes] AS [IsTimes], 
+      [StatItems].[Showas] AS [Showas]
+      FROM [dbo].[StatItems] AS [StatItems]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Status" EntityType="ReportSupModel.Store.Status" store:Type="Tables" store:Schema="dbo" store:Name="Status">
+            <DefiningQuery>SELECT 
+      [Status].[StatusID] AS [StatusID], 
+      [Status].[StatusChar] AS [StatusChar], 
+      [Status].[StatusText] AS [StatusText]
+      FROM [dbo].[Status] AS [Status]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sysdiagrams" EntityType="ReportSupModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Checkinout" EntityType="ReportSupModel.Store.T_Checkinout" store:Type="Tables" store:Schema="dbo" store:Name="T_Checkinout">
+            <DefiningQuery>SELECT 
+      [T_Checkinout].[Logid] AS [Logid], 
+      [T_Checkinout].[Userid] AS [Userid], 
+      [T_Checkinout].[CheckTime] AS [CheckTime], 
+      [T_Checkinout].[CheckType] AS [CheckType], 
+      [T_Checkinout].[Sensorid] AS [Sensorid], 
+      [T_Checkinout].[Checked] AS [Checked], 
+      [T_Checkinout].[WorkType] AS [WorkType], 
+      [T_Checkinout].[AttFlag] AS [AttFlag]
+      FROM [dbo].[T_Checkinout] AS [T_Checkinout]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_UpdateClient" EntityType="ReportSupModel.Store.T_UpdateClient" store:Type="Tables" store:Schema="dbo" store:Name="T_UpdateClient">
+            <DefiningQuery>SELECT 
+      [T_UpdateClient].[Clientid] AS [Clientid]
+      FROM [dbo].[T_UpdateClient] AS [T_UpdateClient]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TimeTable" EntityType="ReportSupModel.Store.TimeTable" store:Type="Tables" store:Schema="dbo" store:Name="TimeTable">
+            <DefiningQuery>SELECT 
+      [TimeTable].[Timeid] AS [Timeid], 
+      [TimeTable].[Timename] AS [Timename], 
+      [TimeTable].[Intime] AS [Intime], 
+      [TimeTable].[Outtime] AS [Outtime], 
+      [TimeTable].[BIntime] AS [BIntime], 
+      [TimeTable].[EIntime] AS [EIntime], 
+      [TimeTable].[BOuttime] AS [BOuttime], 
+      [TimeTable].[EOuttime] AS [EOuttime], 
+      [TimeTable].[Latetime] AS [Latetime], 
+      [TimeTable].[Leavetime] AS [Leavetime], 
+      [TimeTable].[WorkDays] AS [WorkDays], 
+      [TimeTable].[Longtime] AS [Longtime], 
+      [TimeTable].[MustIn] AS [MustIn], 
+      [TimeTable].[MustOut] AS [MustOut], 
+      [TimeTable].[IsFreeTime] AS [IsFreeTime], 
+      [TimeTable].[IsOverTime] AS [IsOverTime]
+      FROM [dbo].[TimeTable] AS [TimeTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserCtrlLog" EntityType="ReportSupModel.Store.UserCtrlLog" store:Type="Tables" store:Schema="dbo" store:Name="UserCtrlLog">
+            <DefiningQuery>SELECT 
+      [UserCtrlLog].[Logid] AS [Logid], 
+      [UserCtrlLog].[Clientid] AS [Clientid], 
+      [UserCtrlLog].[Userid] AS [Userid], 
+      [UserCtrlLog].[CheckTime] AS [CheckTime], 
+      [UserCtrlLog].[ULog] AS [ULog]
+      FROM [dbo].[UserCtrlLog] AS [UserCtrlLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Userinfo" EntityType="ReportSupModel.Store.Userinfo" store:Type="Tables" store:Schema="dbo" store:Name="Userinfo">
+            <DefiningQuery>SELECT 
+      [Userinfo].[Userid] AS [Userid], 
+      [Userinfo].[Name] AS [Name], 
+      [Userinfo].[Sex] AS [Sex], 
+      [Userinfo].[Pwd] AS [Pwd], 
+      [Userinfo].[Deptid] AS [Deptid], 
+      [Userinfo].[Nation] AS [Nation], 
+      [Userinfo].[Brithday] AS [Brithday], 
+      [Userinfo].[EmployDate] AS [EmployDate], 
+      [Userinfo].[Telephone] AS [Telephone], 
+      [Userinfo].[Duty] AS [Duty], 
+      [Userinfo].[NativePlace] AS [NativePlace], 
+      [Userinfo].[IDCard] AS [IDCard], 
+      [Userinfo].[Address] AS [Address], 
+      [Userinfo].[Mobile] AS [Mobile], 
+      [Userinfo].[Educated] AS [Educated], 
+      [Userinfo].[Polity] AS [Polity], 
+      [Userinfo].[Specialty] AS [Specialty], 
+      [Userinfo].[IsAtt] AS [IsAtt], 
+      [Userinfo].[Isovertime] AS [Isovertime], 
+      [Userinfo].[Isrest] AS [Isrest], 
+      [Userinfo].[Remark] AS [Remark], 
+      [Userinfo].[MgFlag] AS [MgFlag], 
+      [Userinfo].[Cardnum] AS [Cardnum], 
+      [Userinfo].[Machineid] AS [Machineid], 
+      [Userinfo].[Picture] AS [Picture], 
+      [Userinfo].[UserFlag] AS [UserFlag], 
+      [Userinfo].[Groupid] AS [Groupid], 
+      [Userinfo].[workdaylong] AS [workdaylong]
+      FROM [dbo].[Userinfo] AS [Userinfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserLeave" EntityType="ReportSupModel.Store.UserLeave" store:Type="Tables" store:Schema="dbo" store:Name="UserLeave">
+            <DefiningQuery>SELECT 
+      [UserLeave].[Userid] AS [Userid], 
+      [UserLeave].[BeginTime] AS [BeginTime], 
+      [UserLeave].[EndTime] AS [EndTime], 
+      [UserLeave].[LeaveClassid] AS [LeaveClassid], 
+      [UserLeave].[Whys] AS [Whys], 
+      [UserLeave].[Lsh] AS [Lsh]
+      FROM [dbo].[UserLeave] AS [UserLeave]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserPower" EntityType="ReportSupModel.Store.UserPower" store:Type="Tables" store:Schema="dbo" store:Name="UserPower">
+            <DefiningQuery>SELECT 
+      [UserPower].[Logid] AS [Logid], 
+      [UserPower].[Userid] AS [Userid], 
+      [UserPower].[ClientNumber] AS [ClientNumber], 
+      [UserPower].[PowerFlag] AS [PowerFlag]
+      FROM [dbo].[UserPower] AS [UserPower]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserTempShift" EntityType="ReportSupModel.Store.UserTempShift" store:Type="Tables" store:Schema="dbo" store:Name="UserTempShift">
+            <DefiningQuery>SELECT 
+      [UserTempShift].[Userid] AS [Userid], 
+      [UserTempShift].[Timeid] AS [Timeid], 
+      [UserTempShift].[WorkDate] AS [WorkDate], 
+      [UserTempShift].[IsOvertime] AS [IsOvertime]
+      FROM [dbo].[UserTempShift] AS [UserTempShift]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Class" EntityType="ReportSupModel.Store.V_Class" store:Type="Tables" store:Schema="dbo" store:Name="V_Class">
+            <DefiningQuery>SELECT 
+      [V_Class].[Schid] AS [Schid], 
+      [V_Class].[Schname] AS [Schname], 
+      [V_Class].[Cycles] AS [Cycles], 
+      [V_Class].[Units] AS [Units], 
+      [V_Class].[AutoClass] AS [AutoClass], 
+      [V_Class].[BeginDay] AS [BeginDay], 
+      [V_Class].[Timeid] AS [Timeid], 
+      [V_Class].[Timename] AS [Timename], 
+      [V_Class].[Intime] AS [Intime], 
+      [V_Class].[Outtime] AS [Outtime], 
+      [V_Class].[BIntime] AS [BIntime], 
+      [V_Class].[EIntime] AS [EIntime], 
+      [V_Class].[BOuttime] AS [BOuttime], 
+      [V_Class].[EOuttime] AS [EOuttime], 
+      [V_Class].[Latetime] AS [Latetime], 
+      [V_Class].[Leavetime] AS [Leavetime], 
+      [V_Class].[WorkDays] AS [WorkDays], 
+      [V_Class].[Longtime] AS [Longtime], 
+      [V_Class].[MustIn] AS [MustIn], 
+      [V_Class].[MustOut] AS [MustOut], 
+      [V_Class].[IsFreetime] AS [IsFreetime], 
+      [V_Class].[IsOvertime] AS [IsOvertime]
+      FROM [dbo].[V_Class] AS [V_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Record" EntityType="ReportSupModel.Store.V_Record" store:Type="Tables" store:Schema="dbo" store:Name="V_Record">
+            <DefiningQuery>SELECT 
+      [V_Record].[Logid] AS [Logid], 
+      [V_Record].[Userid] AS [Userid], 
+      [V_Record].[CheckTime] AS [CheckTime], 
+      [V_Record].[CheckType] AS [CheckType], 
+      [V_Record].[Sensorid] AS [Sensorid], 
+      [V_Record].[WorkType] AS [WorkType], 
+      [V_Record].[AttFlag] AS [AttFlag], 
+      [V_Record].[OpenDoorFlag] AS [OpenDoorFlag], 
+      [V_Record].[Name] AS [Name], 
+      [V_Record].[Deptid] AS [Deptid], 
+      [V_Record].[Duty] AS [Duty], 
+      [V_Record].[DeptName] AS [DeptName], 
+      [V_Record].[Clientid] AS [Clientid], 
+      [V_Record].[ClientName] AS [ClientName], 
+      [V_Record].[StatusText] AS [StatusText]
+      FROM [dbo].[V_Record] AS [V_Record]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserClient" EntityType="ReportSupModel.Store.V_UserClient" store:Type="Tables" store:Schema="dbo" store:Name="V_UserClient">
+            <DefiningQuery>SELECT 
+      [V_UserClient].[Logid] AS [Logid], 
+      [V_UserClient].[Userid] AS [Userid], 
+      [V_UserClient].[ClientNumber] AS [ClientNumber], 
+      [V_UserClient].[PowerFlag] AS [PowerFlag], 
+      [V_UserClient].[Name] AS [Name], 
+      [V_UserClient].[Pwd] AS [Pwd], 
+      [V_UserClient].[Cardnum] AS [Cardnum], 
+      [V_UserClient].[Deptid] AS [Deptid], 
+      [V_UserClient].[UserFlag] AS [UserFlag], 
+      [V_UserClient].[MgFlag] AS [MgFlag], 
+      [V_UserClient].[Groupid] AS [Groupid]
+      FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.AddTimeSet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AddTimeSet">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Userid" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="TimeID" Type="int" />
+          <Property Name="AddTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.BasePara' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="BasePara">
+          <Key>
+            <PropertyRef Name="NoClockIn" />
+            <PropertyRef Name="NoClockOut" />
+            <PropertyRef Name="ISOverTime" />
+            <PropertyRef Name="IsAutoDownRec" />
+            <PropertyRef Name="IsovertimeIn" />
+            <PropertyRef Name="DeductIn" />
+            <PropertyRef Name="DeductOut" />
+          </Key>
+          <Property Name="Company" Type="nvarchar" MaxLength="100" />
+          <Property Name="TwoDay" Type="smallint" />
+          <Property Name="NoClockIn" Type="bit" Nullable="false" />
+          <Property Name="NoClockOut" Type="bit" Nullable="false" />
+          <Property Name="LateTime" Type="smallint" />
+          <Property Name="LeaveTime" Type="smallint" />
+          <Property Name="ISOverTime" Type="bit" Nullable="false" />
+          <Property Name="OverTime" Type="smallint" />
+          <Property Name="WorkDayLong" Type="smallint" />
+          <Property Name="WOverTime" Type="real" />
+          <Property Name="HOverTime" Type="real" />
+          <Property Name="FOverTime" Type="real" />
+          <Property Name="IsAutoDownRec" Type="bit" Nullable="false" />
+          <Property Name="DownRecTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="OvertimeIn" Type="int" />
+          <Property Name="IsovertimeIn" Type="bit" Nullable="false" />
+          <Property Name="DeductIn" Type="bit" Nullable="false" />
+          <Property Name="DeductOut" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Checkinout' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Checkinout">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="CheckTime" />
+            <PropertyRef Name="Checked" />
+            <PropertyRef Name="OpenDoorFlag" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CheckTime" Type="datetime" Nullable="false" />
+          <Property Name="CheckType" Type="nvarchar" MaxLength="2" />
+          <Property Name="Sensorid" Type="nvarchar" MaxLength="10" />
+          <Property Name="Checked" Type="bit" Nullable="false" />
+          <Property Name="WorkType" Type="int" />
+          <Property Name="AttFlag" Type="int" />
+          <Property Name="OpenDoorFlag" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.CheckLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CheckLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="Checktime" Type="datetime" />
+          <Property Name="Checktype" Type="nvarchar" MaxLength="2" />
+          <Property Name="Sensorid" Type="nvarchar" MaxLength="10" />
+          <Property Name="OPFlag" Type="smallint" />
+          <Property Name="Whys" Type="nvarchar" MaxLength="250" />
+          <Property Name="OPname" Type="nvarchar" MaxLength="50" />
+          <Property Name="DTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.DefineField' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DefineField">
+          <Key>
+            <PropertyRef Name="Fieldid" />
+          </Key>
+          <Property Name="Fieldid" Type="int" Nullable="false" />
+          <Property Name="FieldName" Type="nvarchar" MaxLength="20" />
+          <Property Name="FieldValue" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Dept' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Dept">
+          <Key>
+            <PropertyRef Name="Deptid" />
+          </Key>
+          <Property Name="Deptid" Type="int" Nullable="false" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupDeptid" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.FingerClient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FingerClient">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Linkmode" Type="smallint" />
+          <Property Name="IPaddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Baudrate" Type="int" />
+          <Property Name="RecStatus" Type="int" />
+          <Property Name="Floorid" Type="int" />
+          <Property Name="MachineType" Type="int" />
+          <Property Name="DeviceType" Type="int" />
+          <Property Name="CommPWD" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommPort" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Holiday' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Holiday">
+          <Key>
+            <PropertyRef Name="Holidayid" />
+          </Key>
+          <Property Name="Holidayid" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BDate" Type="datetime" />
+          <Property Name="Days" Type="smallint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.LeaveClass' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="LeaveClass">
+          <Key>
+            <PropertyRef Name="Classid" />
+            <PropertyRef Name="Classname" />
+          </Key>
+          <Property Name="Classid" Type="int" Nullable="false" />
+          <Property Name="Classname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ViewColor" Type="int" />
+          <Property Name="Showas" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.MemStat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MemStat">
+          <Key>
+            <PropertyRef Name="Lsh" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Normal" />
+            <PropertyRef Name="Actual" />
+            <PropertyRef Name="Latetime" />
+            <PropertyRef Name="Earlytime" />
+            <PropertyRef Name="Absenttime" />
+            <PropertyRef Name="Overtime" />
+            <PropertyRef Name="Noin" />
+            <PropertyRef Name="Noout" />
+            <PropertyRef Name="Awaytime" />
+            <PropertyRef Name="BLeave" />
+            <PropertyRef Name="Leave" />
+            <PropertyRef Name="Freeovertime" />
+            <PropertyRef Name="Worktime" />
+            <PropertyRef Name="Attrate" />
+          </Key>
+          <Property Name="Lsh" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Udept" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Normal" Type="real" Nullable="false" />
+          <Property Name="Actual" Type="real" Nullable="false" />
+          <Property Name="Latetime" Type="real" Nullable="false" />
+          <Property Name="Earlytime" Type="real" Nullable="false" />
+          <Property Name="Absenttime" Type="real" Nullable="false" />
+          <Property Name="Overtime" Type="real" Nullable="false" />
+          <Property Name="Noin" Type="int" Nullable="false" />
+          <Property Name="Noout" Type="int" Nullable="false" />
+          <Property Name="Awaytime" Type="real" Nullable="false" />
+          <Property Name="BLeave" Type="real" Nullable="false" />
+          <Property Name="Leave" Type="real" Nullable="false" />
+          <Property Name="Freeovertime" Type="real" Nullable="false" />
+          <Property Name="Worktime" Type="real" Nullable="false" />
+          <Property Name="Attrate" Type="real" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.OPinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="OPinfo">
+          <Key>
+            <PropertyRef Name="Opid" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Opid" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Authority" Type="nvarchar" MaxLength="32" />
+          <Property Name="Deptpower" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.OPLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="OPLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="OPid" Type="int" />
+          <Property Name="Optime" Type="datetime" />
+          <Property Name="OPlog" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.OutProg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="OutProg">
+          <Key>
+            <PropertyRef Name="Progid" />
+          </Key>
+          <Property Name="Progid" Type="int" Nullable="false" />
+          <Property Name="ProgName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProgPath" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Schedule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Schid" />
+            <PropertyRef Name="AutoClass" />
+          </Key>
+          <Property Name="Schid" Type="int" Nullable="false" />
+          <Property Name="Schname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cycles" Type="smallint" />
+          <Property Name="Units" Type="smallint" />
+          <Property Name="AutoClass" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.StatItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="StatItems">
+          <Key>
+            <PropertyRef Name="Itemid" />
+            <PropertyRef Name="IsAddup" />
+            <PropertyRef Name="IsTimes" />
+          </Key>
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Units" Type="smallint" />
+          <Property Name="MinUnit" Type="real" />
+          <Property Name="SRControl" Type="smallint" />
+          <Property Name="IsAddup" Type="bit" Nullable="false" />
+          <Property Name="IsTimes" Type="bit" Nullable="false" />
+          <Property Name="Showas" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusChar" />
+            <PropertyRef Name="StatusText" />
+          </Key>
+          <Property Name="StatusID" Type="int" />
+          <Property Name="StatusChar" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="StatusText" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.T_Checkinout' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="T_Checkinout">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Checked" />
+            <PropertyRef Name="WorkType" />
+            <PropertyRef Name="AttFlag" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CheckTime" Type="datetime" />
+          <Property Name="CheckType" Type="nvarchar" MaxLength="2" />
+          <Property Name="Sensorid" Type="nvarchar" MaxLength="10" />
+          <Property Name="Checked" Type="bit" Nullable="false" />
+          <Property Name="WorkType" Type="int" Nullable="false" />
+          <Property Name="AttFlag" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.T_UpdateClient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="T_UpdateClient">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.TimeTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TimeTable">
+          <Key>
+            <PropertyRef Name="Timeid" />
+            <PropertyRef Name="Timename" />
+            <PropertyRef Name="Intime" />
+            <PropertyRef Name="Outtime" />
+            <PropertyRef Name="BIntime" />
+            <PropertyRef Name="EIntime" />
+            <PropertyRef Name="BOuttime" />
+            <PropertyRef Name="EOuttime" />
+            <PropertyRef Name="MustIn" />
+            <PropertyRef Name="MustOut" />
+            <PropertyRef Name="IsFreeTime" />
+            <PropertyRef Name="IsOverTime" />
+          </Key>
+          <Property Name="Timeid" Type="int" Nullable="false" />
+          <Property Name="Timename" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Intime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Outtime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="BIntime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EIntime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="BOuttime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="EOuttime" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Latetime" Type="smallint" />
+          <Property Name="Leavetime" Type="smallint" />
+          <Property Name="WorkDays" Type="real" />
+          <Property Name="Longtime" Type="smallint" />
+          <Property Name="MustIn" Type="bit" Nullable="false" />
+          <Property Name="MustOut" Type="bit" Nullable="false" />
+          <Property Name="IsFreeTime" Type="bit" Nullable="false" />
+          <Property Name="IsOverTime" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.UserCtrlLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserCtrlLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Clientid" />
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Clientid" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Userid" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CheckTime" Type="datetime" />
+          <Property Name="ULog" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.Userinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Userinfo">
+          <Key>
+            <PropertyRef Name="IsAtt" />
+            <PropertyRef Name="Isovertime" />
+            <PropertyRef Name="Isrest" />
+          </Key>
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deptid" Type="int" />
+          <Property Name="Nation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brithday" Type="datetime" />
+          <Property Name="EmployDate" Type="datetime" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="NativePlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Educated" Type="nvarchar" MaxLength="50" />
+          <Property Name="Polity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Specialty" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAtt" Type="bit" Nullable="false" />
+          <Property Name="Isovertime" Type="bit" Nullable="false" />
+          <Property Name="Isrest" Type="bit" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="250" />
+          <Property Name="MgFlag" Type="smallint" />
+          <Property Name="Cardnum" Type="nvarchar" MaxLength="20" />
+          <Property Name="Machineid" Type="nvarchar" MaxLength="255" />
+          <Property Name="Picture" Type="image" />
+          <Property Name="UserFlag" Type="int" />
+          <Property Name="Groupid" Type="int" />
+          <Property Name="workdaylong" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.UserLeave' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserLeave">
+          <Key>
+            <PropertyRef Name="Lsh" />
+          </Key>
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="BeginTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="LeaveClassid" Type="int" />
+          <Property Name="Whys" Type="nvarchar" MaxLength="250" />
+          <Property Name="Lsh" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.UserPower' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserPower">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="PowerFlag" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.UserTempShift' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserTempShift">
+          <Key>
+            <PropertyRef Name="IsOvertime" />
+          </Key>
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="Timeid" Type="int" />
+          <Property Name="WorkDate" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsOvertime" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.V_Class' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Class">
+          <Key>
+            <PropertyRef Name="Schid" />
+            <PropertyRef Name="AutoClass" />
+            <PropertyRef Name="MustIn" />
+            <PropertyRef Name="MustOut" />
+            <PropertyRef Name="IsFreetime" />
+            <PropertyRef Name="IsOvertime" />
+          </Key>
+          <Property Name="Schid" Type="int" Nullable="false" />
+          <Property Name="Schname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cycles" Type="smallint" />
+          <Property Name="Units" Type="smallint" />
+          <Property Name="AutoClass" Type="bit" Nullable="false" />
+          <Property Name="BeginDay" Type="smallint" />
+          <Property Name="Timeid" Type="int" />
+          <Property Name="Timename" Type="nvarchar" MaxLength="20" />
+          <Property Name="Intime" Type="nvarchar" MaxLength="5" />
+          <Property Name="Outtime" Type="nvarchar" MaxLength="5" />
+          <Property Name="BIntime" Type="nvarchar" MaxLength="5" />
+          <Property Name="EIntime" Type="nvarchar" MaxLength="5" />
+          <Property Name="BOuttime" Type="nvarchar" MaxLength="5" />
+          <Property Name="EOuttime" Type="nvarchar" MaxLength="5" />
+          <Property Name="Latetime" Type="smallint" />
+          <Property Name="Leavetime" Type="smallint" />
+          <Property Name="WorkDays" Type="real" />
+          <Property Name="Longtime" Type="smallint" />
+          <Property Name="MustIn" Type="bit" Nullable="false" />
+          <Property Name="MustOut" Type="bit" Nullable="false" />
+          <Property Name="IsFreetime" Type="bit" Nullable="false" />
+          <Property Name="IsOvertime" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.V_Record' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Record">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="OpenDoorFlag" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="CheckTime" Type="datetime" />
+          <Property Name="CheckType" Type="nvarchar" MaxLength="2" />
+          <Property Name="Sensorid" Type="nvarchar" MaxLength="10" />
+          <Property Name="WorkType" Type="int" />
+          <Property Name="AttFlag" Type="int" />
+          <Property Name="OpenDoorFlag" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deptid" Type="int" />
+          <Property Name="Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clientid" Type="nvarchar" MaxLength="10" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusText" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportSup.dbo.V_UserClient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_UserClient">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="PowerFlag" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cardnum" Type="nvarchar" MaxLength="20" />
+          <Property Name="Deptid" Type="int" />
+          <Property Name="UserFlag" Type="int" />
+          <Property Name="MgFlag" Type="smallint" />
+          <Property Name="Groupid" Type="int" />
+        </EntityType>
+        <Function Name="EmployesUnleash" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="nvarchar" Mode="In" />
+          <Parameter Name="deptid" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TB_Info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReportSupModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ReportSupEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AddTimeSets" EntityType="ReportSupModel.AddTimeSet" />
+          <EntitySet Name="BaseParas" EntityType="ReportSupModel.BasePara" />
+          <EntitySet Name="Checkinouts" EntityType="ReportSupModel.Checkinout" />
+          <EntitySet Name="CheckLogs" EntityType="ReportSupModel.CheckLog" />
+          <EntitySet Name="DefineFields" EntityType="ReportSupModel.DefineField" />
+          <EntitySet Name="Depts" EntityType="ReportSupModel.Dept" />
+          <EntitySet Name="FingerClients" EntityType="ReportSupModel.FingerClient" />
+          <EntitySet Name="Holidays" EntityType="ReportSupModel.Holiday" />
+          <EntitySet Name="LeaveClasses" EntityType="ReportSupModel.LeaveClass" />
+          <EntitySet Name="MemStats" EntityType="ReportSupModel.MemStat" />
+          <EntitySet Name="OPinfoes" EntityType="ReportSupModel.OPinfo" />
+          <EntitySet Name="OPLogs" EntityType="ReportSupModel.OPLog" />
+          <EntitySet Name="OutProgs" EntityType="ReportSupModel.OutProg" />
+          <EntitySet Name="Schedules" EntityType="ReportSupModel.Schedule" />
+          <EntitySet Name="StatItems" EntityType="ReportSupModel.StatItem" />
+          <EntitySet Name="Status" EntityType="ReportSupModel.Status" />
+          <EntitySet Name="sysdiagrams" EntityType="ReportSupModel.sysdiagram" />
+          <EntitySet Name="T_Checkinout" EntityType="ReportSupModel.T_Checkinout" />
+          <EntitySet Name="T_UpdateClient" EntityType="ReportSupModel.T_UpdateClient" />
+          <EntitySet Name="TimeTables" EntityType="ReportSupModel.TimeTable" />
+          <EntitySet Name="UserCtrlLogs" EntityType="ReportSupModel.UserCtrlLog" />
+          <EntitySet Name="Userinfoes" EntityType="ReportSupModel.Userinfo" />
+          <EntitySet Name="UserLeaves" EntityType="ReportSupModel.UserLeave" />
+          <EntitySet Name="UserPowers" EntityType="ReportSupModel.UserPower" />
+          <EntitySet Name="UserTempShifts" EntityType="ReportSupModel.UserTempShift" />
+          <EntitySet Name="V_Class" EntityType="ReportSupModel.V_Class" />
+          <EntitySet Name="V_Record" EntityType="ReportSupModel.V_Record" />
+          <EntitySet Name="V_UserClient" EntityType="ReportSupModel.V_UserClient" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ReportSupModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ReportSupModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="EmployesUnleash" ReturnType="Collection(ReportSupModel.EmployesUnleash_Result)">
+            <Parameter Name="fecha" Mode="In" Type="String" />
+            <Parameter Name="deptid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TB_Info" ReturnType="Collection(ReportSupModel.TB_Info_Result)" />
+        </EntityContainer>
+        <EntityType Name="AddTimeSet">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="TimeID" Type="Int32" />
+          <Property Name="AddTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BasePara">
+          <Key>
+            <PropertyRef Name="NoClockIn" />
+            <PropertyRef Name="NoClockOut" />
+            <PropertyRef Name="ISOverTime" />
+            <PropertyRef Name="IsAutoDownRec" />
+            <PropertyRef Name="IsovertimeIn" />
+            <PropertyRef Name="DeductIn" />
+            <PropertyRef Name="DeductOut" />
+          </Key>
+          <Property Name="Company" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TwoDay" Type="Int16" />
+          <Property Name="NoClockIn" Type="Boolean" Nullable="false" />
+          <Property Name="NoClockOut" Type="Boolean" Nullable="false" />
+          <Property Name="LateTime" Type="Int16" />
+          <Property Name="LeaveTime" Type="Int16" />
+          <Property Name="ISOverTime" Type="Boolean" Nullable="false" />
+          <Property Name="OverTime" Type="Int16" />
+          <Property Name="WorkDayLong" Type="Int16" />
+          <Property Name="WOverTime" Type="Single" />
+          <Property Name="HOverTime" Type="Single" />
+          <Property Name="FOverTime" Type="Single" />
+          <Property Name="IsAutoDownRec" Type="Boolean" Nullable="false" />
+          <Property Name="DownRecTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OvertimeIn" Type="Int32" />
+          <Property Name="IsovertimeIn" Type="Boolean" Nullable="false" />
+          <Property Name="DeductIn" Type="Boolean" Nullable="false" />
+          <Property Name="DeductOut" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Checkinout">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="CheckTime" />
+            <PropertyRef Name="Checked" />
+            <PropertyRef Name="OpenDoorFlag" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CheckType" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Checked" Type="Boolean" Nullable="false" />
+          <Property Name="WorkType" Type="Int32" />
+          <Property Name="AttFlag" Type="Int32" />
+          <Property Name="OpenDoorFlag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CheckLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Checktime" Type="DateTime" Precision="3" />
+          <Property Name="Checktype" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OPFlag" Type="Int16" />
+          <Property Name="Whys" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="OPname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DefineField">
+          <Key>
+            <PropertyRef Name="Fieldid" />
+          </Key>
+          <Property Name="Fieldid" Type="Int32" Nullable="false" />
+          <Property Name="FieldName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FieldValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Dept">
+          <Key>
+            <PropertyRef Name="Deptid" />
+          </Key>
+          <Property Name="Deptid" Type="Int32" Nullable="false" />
+          <Property Name="DeptName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SupDeptid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FingerClient">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Linkmode" Type="Int16" />
+          <Property Name="IPaddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ClientName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Baudrate" Type="Int32" />
+          <Property Name="RecStatus" Type="Int32" />
+          <Property Name="Floorid" Type="Int32" />
+          <Property Name="MachineType" Type="Int32" />
+          <Property Name="DeviceType" Type="Int32" />
+          <Property Name="CommPWD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CommPort" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Holiday">
+          <Key>
+            <PropertyRef Name="Holidayid" />
+          </Key>
+          <Property Name="Holidayid" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BDate" Type="DateTime" Precision="3" />
+          <Property Name="Days" Type="Int16" />
+        </EntityType>
+        <EntityType Name="LeaveClass">
+          <Key>
+            <PropertyRef Name="Classid" />
+            <PropertyRef Name="Classname" />
+          </Key>
+          <Property Name="Classid" Type="Int32" Nullable="false" />
+          <Property Name="Classname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ViewColor" Type="Int32" />
+          <Property Name="Showas" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MemStat">
+          <Key>
+            <PropertyRef Name="Lsh" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Normal" />
+            <PropertyRef Name="Actual" />
+            <PropertyRef Name="Latetime" />
+            <PropertyRef Name="Earlytime" />
+            <PropertyRef Name="Absenttime" />
+            <PropertyRef Name="Overtime" />
+            <PropertyRef Name="Noin" />
+            <PropertyRef Name="Noout" />
+            <PropertyRef Name="Awaytime" />
+            <PropertyRef Name="BLeave" />
+            <PropertyRef Name="Leave" />
+            <PropertyRef Name="Freeovertime" />
+            <PropertyRef Name="Worktime" />
+            <PropertyRef Name="Attrate" />
+          </Key>
+          <Property Name="Lsh" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Udept" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Uname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Normal" Type="Single" Nullable="false" />
+          <Property Name="Actual" Type="Single" Nullable="false" />
+          <Property Name="Latetime" Type="Single" Nullable="false" />
+          <Property Name="Earlytime" Type="Single" Nullable="false" />
+          <Property Name="Absenttime" Type="Single" Nullable="false" />
+          <Property Name="Overtime" Type="Single" Nullable="false" />
+          <Property Name="Noin" Type="Int32" Nullable="false" />
+          <Property Name="Noout" Type="Int32" Nullable="false" />
+          <Property Name="Awaytime" Type="Single" Nullable="false" />
+          <Property Name="BLeave" Type="Single" Nullable="false" />
+          <Property Name="Leave" Type="Single" Nullable="false" />
+          <Property Name="Freeovertime" Type="Single" Nullable="false" />
+          <Property Name="Worktime" Type="Single" Nullable="false" />
+          <Property Name="Attrate" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPinfo">
+          <Key>
+            <PropertyRef Name="Opid" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Opid" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Authority" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Deptpower" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OPLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="OPid" Type="Int32" />
+          <Property Name="Optime" Type="DateTime" Precision="3" />
+          <Property Name="OPlog1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OutProg">
+          <Key>
+            <PropertyRef Name="Progid" />
+          </Key>
+          <Property Name="Progid" Type="Int32" Nullable="false" />
+          <Property Name="ProgName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProgPath" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Schid" />
+            <PropertyRef Name="AutoClass" />
+          </Key>
+          <Property Name="Schid" Type="Int32" Nullable="false" />
+          <Property Name="Schname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Cycles" Type="Int16" />
+          <Property Name="Units" Type="Int16" />
+          <Property Name="AutoClass" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatItem">
+          <Key>
+            <PropertyRef Name="Itemid" />
+            <PropertyRef Name="IsAddup" />
+            <PropertyRef Name="IsTimes" />
+          </Key>
+          <Property Name="Itemid" Type="Int32" Nullable="false" />
+          <Property Name="ItemName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Units" Type="Int16" />
+          <Property Name="MinUnit" Type="Single" />
+          <Property Name="SRControl" Type="Int16" />
+          <Property Name="IsAddup" Type="Boolean" Nullable="false" />
+          <Property Name="IsTimes" Type="Boolean" Nullable="false" />
+          <Property Name="Showas" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusChar" />
+            <PropertyRef Name="StatusText" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="StatusChar" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="StatusText" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Checkinout">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Checked" />
+            <PropertyRef Name="WorkType" />
+            <PropertyRef Name="AttFlag" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CheckTime" Type="DateTime" Precision="3" />
+          <Property Name="CheckType" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Checked" Type="Boolean" Nullable="false" />
+          <Property Name="WorkType" Type="Int32" Nullable="false" />
+          <Property Name="AttFlag" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_UpdateClient">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TimeTable">
+          <Key>
+            <PropertyRef Name="Timeid" />
+            <PropertyRef Name="Timename" />
+            <PropertyRef Name="Intime" />
+            <PropertyRef Name="Outtime" />
+            <PropertyRef Name="BIntime" />
+            <PropertyRef Name="EIntime" />
+            <PropertyRef Name="BOuttime" />
+            <PropertyRef Name="EOuttime" />
+            <PropertyRef Name="MustIn" />
+            <PropertyRef Name="MustOut" />
+            <PropertyRef Name="IsFreeTime" />
+            <PropertyRef Name="IsOverTime" />
+          </Key>
+          <Property Name="Timeid" Type="Int32" Nullable="false" />
+          <Property Name="Timename" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Intime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Outtime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="BIntime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EIntime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="BOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Latetime" Type="Int16" />
+          <Property Name="Leavetime" Type="Int16" />
+          <Property Name="WorkDays" Type="Single" />
+          <Property Name="Longtime" Type="Int16" />
+          <Property Name="MustIn" Type="Boolean" Nullable="false" />
+          <Property Name="MustOut" Type="Boolean" Nullable="false" />
+          <Property Name="IsFreeTime" Type="Boolean" Nullable="false" />
+          <Property Name="IsOverTime" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserCtrlLog">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="Clientid" />
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CheckTime" Type="DateTime" Precision="3" />
+          <Property Name="ULog" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Userinfo">
+          <Key>
+            <PropertyRef Name="IsAtt" />
+            <PropertyRef Name="Isovertime" />
+            <PropertyRef Name="Isrest" />
+          </Key>
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deptid" Type="Int32" />
+          <Property Name="Nation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brithday" Type="DateTime" Precision="3" />
+          <Property Name="EmployDate" Type="DateTime" Precision="3" />
+          <Property Name="Telephone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Duty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IDCard" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Educated" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Polity" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Specialty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsAtt" Type="Boolean" Nullable="false" />
+          <Property Name="Isovertime" Type="Boolean" Nullable="false" />
+          <Property Name="Isrest" Type="Boolean" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="MgFlag" Type="Int16" />
+          <Property Name="Cardnum" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Machineid" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserFlag" Type="Int32" />
+          <Property Name="Groupid" Type="Int32" />
+          <Property Name="workdaylong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserLeave">
+          <Key>
+            <PropertyRef Name="Lsh" />
+          </Key>
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BeginTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="LeaveClassid" Type="Int32" />
+          <Property Name="Whys" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Lsh" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserPower">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="PowerFlag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserTempShift">
+          <Key>
+            <PropertyRef Name="IsOvertime" />
+          </Key>
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Timeid" Type="Int32" />
+          <Property Name="WorkDate" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IsOvertime" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Class">
+          <Key>
+            <PropertyRef Name="Schid" />
+            <PropertyRef Name="AutoClass" />
+            <PropertyRef Name="MustIn" />
+            <PropertyRef Name="MustOut" />
+            <PropertyRef Name="IsFreetime" />
+            <PropertyRef Name="IsOvertime" />
+          </Key>
+          <Property Name="Schid" Type="Int32" Nullable="false" />
+          <Property Name="Schname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Cycles" Type="Int16" />
+          <Property Name="Units" Type="Int16" />
+          <Property Name="AutoClass" Type="Boolean" Nullable="false" />
+          <Property Name="BeginDay" Type="Int16" />
+          <Property Name="Timeid" Type="Int32" />
+          <Property Name="Timename" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Intime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Outtime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="BIntime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EIntime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="BOuttime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="EOuttime" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Latetime" Type="Int16" />
+          <Property Name="Leavetime" Type="Int16" />
+          <Property Name="WorkDays" Type="Single" />
+          <Property Name="Longtime" Type="Int16" />
+          <Property Name="MustIn" Type="Boolean" Nullable="false" />
+          <Property Name="MustOut" Type="Boolean" Nullable="false" />
+          <Property Name="IsFreetime" Type="Boolean" Nullable="false" />
+          <Property Name="IsOvertime" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Record">
+          <Key>
+            <PropertyRef Name="Logid" />
+            <PropertyRef Name="OpenDoorFlag" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CheckTime" Type="DateTime" Precision="3" />
+          <Property Name="CheckType" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="WorkType" Type="Int32" />
+          <Property Name="AttFlag" Type="Int32" />
+          <Property Name="OpenDoorFlag" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deptid" Type="Int32" />
+          <Property Name="Duty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Clientid" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ClientName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusText" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="V_UserClient">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="PowerFlag" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Cardnum" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Deptid" Type="Int32" />
+          <Property Name="UserFlag" Type="Int32" />
+          <Property Name="MgFlag" Type="Int16" />
+          <Property Name="Groupid" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="EmployesUnleash_Result">
+          <Property Type="String" Name="userId" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="horaEntrada" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="horasalida" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="horaTrabajada" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="TB_Info_Result">
+          <Property Type="String" Name="Userid" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sex" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Pwd" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Deptid" Nullable="true" />
+          <Property Type="String" Name="Nation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Brithday" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EmployDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Duty" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NativePlace" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IDCard" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Educated" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Polity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Specialty" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAtt" Nullable="false" />
+          <Property Type="Boolean" Name="Isovertime" Nullable="false" />
+          <Property Type="Boolean" Name="Isrest" Nullable="false" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="250" />
+          <Property Type="Int16" Name="MgFlag" Nullable="true" />
+          <Property Type="String" Name="Cardnum" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Machineid" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="Picture" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="UserFlag" Nullable="true" />
+          <Property Type="Int32" Name="Groupid" Nullable="true" />
+          <Property Type="Int32" Name="workdaylong" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReportSupModelStoreContainer" CdmEntityContainer="ReportSupEntities">
+          <EntitySetMapping Name="AddTimeSets">
+            <EntityTypeMapping TypeName="ReportSupModel.AddTimeSet">
+              <MappingFragment StoreEntitySet="AddTimeSet">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaseParas">
+            <EntityTypeMapping TypeName="ReportSupModel.BasePara">
+              <MappingFragment StoreEntitySet="BasePara">
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="TwoDay" ColumnName="TwoDay" />
+                <ScalarProperty Name="NoClockIn" ColumnName="NoClockIn" />
+                <ScalarProperty Name="NoClockOut" ColumnName="NoClockOut" />
+                <ScalarProperty Name="LateTime" ColumnName="LateTime" />
+                <ScalarProperty Name="LeaveTime" ColumnName="LeaveTime" />
+                <ScalarProperty Name="ISOverTime" ColumnName="ISOverTime" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="WorkDayLong" ColumnName="WorkDayLong" />
+                <ScalarProperty Name="WOverTime" ColumnName="WOverTime" />
+                <ScalarProperty Name="HOverTime" ColumnName="HOverTime" />
+                <ScalarProperty Name="FOverTime" ColumnName="FOverTime" />
+                <ScalarProperty Name="IsAutoDownRec" ColumnName="IsAutoDownRec" />
+                <ScalarProperty Name="DownRecTime" ColumnName="DownRecTime" />
+                <ScalarProperty Name="OvertimeIn" ColumnName="OvertimeIn" />
+                <ScalarProperty Name="IsovertimeIn" ColumnName="IsovertimeIn" />
+                <ScalarProperty Name="DeductIn" ColumnName="DeductIn" />
+                <ScalarProperty Name="DeductOut" ColumnName="DeductOut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Checkinouts">
+            <EntityTypeMapping TypeName="ReportSupModel.Checkinout">
+              <MappingFragment StoreEntitySet="Checkinout">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+                <ScalarProperty Name="CheckType" ColumnName="CheckType" />
+                <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+                <ScalarProperty Name="Checked" ColumnName="Checked" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="AttFlag" ColumnName="AttFlag" />
+                <ScalarProperty Name="OpenDoorFlag" ColumnName="OpenDoorFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CheckLogs">
+            <EntityTypeMapping TypeName="ReportSupModel.CheckLog">
+              <MappingFragment StoreEntitySet="CheckLog">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+                <ScalarProperty Name="Checktype" ColumnName="Checktype" />
+                <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+                <ScalarProperty Name="OPFlag" ColumnName="OPFlag" />
+                <ScalarProperty Name="Whys" ColumnName="Whys" />
+                <ScalarProperty Name="OPname" ColumnName="OPname" />
+                <ScalarProperty Name="DTime" ColumnName="DTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefineFields">
+            <EntityTypeMapping TypeName="ReportSupModel.DefineField">
+              <MappingFragment StoreEntitySet="DefineField">
+                <ScalarProperty Name="Fieldid" ColumnName="Fieldid" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Depts">
+            <EntityTypeMapping TypeName="ReportSupModel.Dept">
+              <MappingFragment StoreEntitySet="Dept">
+                <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="SupDeptid" ColumnName="SupDeptid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FingerClients">
+            <EntityTypeMapping TypeName="ReportSupModel.FingerClient">
+              <MappingFragment StoreEntitySet="FingerClient">
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+                <ScalarProperty Name="Linkmode" ColumnName="Linkmode" />
+                <ScalarProperty Name="IPaddress" ColumnName="IPaddress" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="Baudrate" ColumnName="Baudrate" />
+                <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+                <ScalarProperty Name="Floorid" ColumnName="Floorid" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="CommPWD" ColumnName="CommPWD" />
+                <ScalarProperty Name="CommPort" ColumnName="CommPort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Holidays">
+            <EntityTypeMapping TypeName="ReportSupModel.Holiday">
+              <MappingFragment StoreEntitySet="Holiday">
+                <ScalarProperty Name="Holidayid" ColumnName="Holidayid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveClasses">
+            <EntityTypeMapping TypeName="ReportSupModel.LeaveClass">
+              <MappingFragment StoreEntitySet="LeaveClass">
+                <ScalarProperty Name="Classid" ColumnName="Classid" />
+                <ScalarProperty Name="Classname" ColumnName="Classname" />
+                <ScalarProperty Name="ViewColor" ColumnName="ViewColor" />
+                <ScalarProperty Name="Showas" ColumnName="Showas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemStats">
+            <EntityTypeMapping TypeName="ReportSupModel.MemStat">
+              <MappingFragment StoreEntitySet="MemStat">
+                <ScalarProperty Name="Lsh" ColumnName="Lsh" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Udept" ColumnName="Udept" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="Normal" ColumnName="Normal" />
+                <ScalarProperty Name="Actual" ColumnName="Actual" />
+                <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+                <ScalarProperty Name="Earlytime" ColumnName="Earlytime" />
+                <ScalarProperty Name="Absenttime" ColumnName="Absenttime" />
+                <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+                <ScalarProperty Name="Noin" ColumnName="Noin" />
+                <ScalarProperty Name="Noout" ColumnName="Noout" />
+                <ScalarProperty Name="Awaytime" ColumnName="Awaytime" />
+                <ScalarProperty Name="BLeave" ColumnName="BLeave" />
+                <ScalarProperty Name="Leave" ColumnName="Leave" />
+                <ScalarProperty Name="Freeovertime" ColumnName="Freeovertime" />
+                <ScalarProperty Name="Worktime" ColumnName="Worktime" />
+                <ScalarProperty Name="Attrate" ColumnName="Attrate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPinfoes">
+            <EntityTypeMapping TypeName="ReportSupModel.OPinfo">
+              <MappingFragment StoreEntitySet="OPinfo">
+                <ScalarProperty Name="Opid" ColumnName="Opid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="Deptpower" ColumnName="Deptpower" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPLogs">
+            <EntityTypeMapping TypeName="ReportSupModel.OPLog">
+              <MappingFragment StoreEntitySet="OPLog">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="OPid" ColumnName="OPid" />
+                <ScalarProperty Name="Optime" ColumnName="Optime" />
+                <ScalarProperty Name="OPlog1" ColumnName="OPlog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutProgs">
+            <EntityTypeMapping TypeName="ReportSupModel.OutProg">
+              <MappingFragment StoreEntitySet="OutProg">
+                <ScalarProperty Name="Progid" ColumnName="Progid" />
+                <ScalarProperty Name="ProgName" ColumnName="ProgName" />
+                <ScalarProperty Name="ProgPath" ColumnName="ProgPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="ReportSupModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="Schid" ColumnName="Schid" />
+                <ScalarProperty Name="Schname" ColumnName="Schname" />
+                <ScalarProperty Name="Cycles" ColumnName="Cycles" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="AutoClass" ColumnName="AutoClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatItems">
+            <EntityTypeMapping TypeName="ReportSupModel.StatItem">
+              <MappingFragment StoreEntitySet="StatItems">
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+                <ScalarProperty Name="SRControl" ColumnName="SRControl" />
+                <ScalarProperty Name="IsAddup" ColumnName="IsAddup" />
+                <ScalarProperty Name="IsTimes" ColumnName="IsTimes" />
+                <ScalarProperty Name="Showas" ColumnName="Showas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="ReportSupModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusChar" ColumnName="StatusChar" />
+                <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ReportSupModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Checkinout">
+            <EntityTypeMapping TypeName="ReportSupModel.T_Checkinout">
+              <MappingFragment StoreEntitySet="T_Checkinout">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+                <ScalarProperty Name="CheckType" ColumnName="CheckType" />
+                <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+                <ScalarProperty Name="Checked" ColumnName="Checked" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="AttFlag" ColumnName="AttFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_UpdateClient">
+            <EntityTypeMapping TypeName="ReportSupModel.T_UpdateClient">
+              <MappingFragment StoreEntitySet="T_UpdateClient">
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeTables">
+            <EntityTypeMapping TypeName="ReportSupModel.TimeTable">
+              <MappingFragment StoreEntitySet="TimeTable">
+                <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+                <ScalarProperty Name="Timename" ColumnName="Timename" />
+                <ScalarProperty Name="Intime" ColumnName="Intime" />
+                <ScalarProperty Name="Outtime" ColumnName="Outtime" />
+                <ScalarProperty Name="BIntime" ColumnName="BIntime" />
+                <ScalarProperty Name="EIntime" ColumnName="EIntime" />
+                <ScalarProperty Name="BOuttime" ColumnName="BOuttime" />
+                <ScalarProperty Name="EOuttime" ColumnName="EOuttime" />
+                <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+                <ScalarProperty Name="Leavetime" ColumnName="Leavetime" />
+                <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+                <ScalarProperty Name="Longtime" ColumnName="Longtime" />
+                <ScalarProperty Name="MustIn" ColumnName="MustIn" />
+                <ScalarProperty Name="MustOut" ColumnName="MustOut" />
+                <ScalarProperty Name="IsFreeTime" ColumnName="IsFreeTime" />
+                <ScalarProperty Name="IsOverTime" ColumnName="IsOverTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCtrlLogs">
+            <EntityTypeMapping TypeName="ReportSupModel.UserCtrlLog">
+              <MappingFragment StoreEntitySet="UserCtrlLog">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+                <ScalarProperty Name="ULog" ColumnName="ULog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Userinfoes">
+            <EntityTypeMapping TypeName="ReportSupModel.Userinfo">
+              <MappingFragment StoreEntitySet="Userinfo">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+                <ScalarProperty Name="EmployDate" ColumnName="EmployDate" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Educated" ColumnName="Educated" />
+                <ScalarProperty Name="Polity" ColumnName="Polity" />
+                <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+                <ScalarProperty Name="IsAtt" ColumnName="IsAtt" />
+                <ScalarProperty Name="Isovertime" ColumnName="Isovertime" />
+                <ScalarProperty Name="Isrest" ColumnName="Isrest" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+                <ScalarProperty Name="Cardnum" ColumnName="Cardnum" />
+                <ScalarProperty Name="Machineid" ColumnName="Machineid" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+                <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+                <ScalarProperty Name="workdaylong" ColumnName="workdaylong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLeaves">
+            <EntityTypeMapping TypeName="ReportSupModel.UserLeave">
+              <MappingFragment StoreEntitySet="UserLeave">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LeaveClassid" ColumnName="LeaveClassid" />
+                <ScalarProperty Name="Whys" ColumnName="Whys" />
+                <ScalarProperty Name="Lsh" ColumnName="Lsh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPowers">
+            <EntityTypeMapping TypeName="ReportSupModel.UserPower">
+              <MappingFragment StoreEntitySet="UserPower">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTempShifts">
+            <EntityTypeMapping TypeName="ReportSupModel.UserTempShift">
+              <MappingFragment StoreEntitySet="UserTempShift">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Class">
+            <EntityTypeMapping TypeName="ReportSupModel.V_Class">
+              <MappingFragment StoreEntitySet="V_Class">
+                <ScalarProperty Name="Schid" ColumnName="Schid" />
+                <ScalarProperty Name="Schname" ColumnName="Schname" />
+                <ScalarProperty Name="Cycles" ColumnName="Cycles" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="AutoClass" ColumnName="AutoClass" />
+                <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
+                <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+                <ScalarProperty Name="Timename" ColumnName="Timename" />
+                <ScalarProperty Name="Intime" ColumnName="Intime" />
+                <ScalarProperty Name="Outtime" ColumnName="Outtime" />
+                <ScalarProperty Name="BIntime" ColumnName="BIntime" />
+                <ScalarProperty Name="EIntime" ColumnName="EIntime" />
+                <ScalarProperty Name="BOuttime" ColumnName="BOuttime" />
+                <ScalarProperty Name="EOuttime" ColumnName="EOuttime" />
+                <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+                <ScalarProperty Name="Leavetime" ColumnName="Leavetime" />
+                <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+                <ScalarProperty Name="Longtime" ColumnName="Longtime" />
+                <ScalarProperty Name="MustIn" ColumnName="MustIn" />
+                <ScalarProperty Name="MustOut" ColumnName="MustOut" />
+                <ScalarProperty Name="IsFreetime" ColumnName="IsFreetime" />
+                <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Record">
+            <EntityTypeMapping TypeName="ReportSupModel.V_Record">
+              <MappingFragment StoreEntitySet="V_Record">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+                <ScalarProperty Name="CheckType" ColumnName="CheckType" />
+                <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="AttFlag" ColumnName="AttFlag" />
+                <ScalarProperty Name="OpenDoorFlag" ColumnName="OpenDoorFlag" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserClient">
+            <EntityTypeMapping TypeName="ReportSupModel.V_UserClient">
+              <MappingFragment StoreEntitySet="V_UserClient">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Cardnum" ColumnName="Cardnum" />
+                <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+                <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+                <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+                <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ReportSupModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ReportSupModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ReportSupModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ReportSupModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ReportSupModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ReportSupModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ReportSupModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ReportSupModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ReportSupModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="EmployesUnleash" FunctionName="ReportSupModel.Store.EmployesUnleash">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ReportSupModel.EmployesUnleash_Result">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="horaEntrada" ColumnName="horaEntrada" />
+                <ScalarProperty Name="horasalida" ColumnName="horasalida" />
+                <ScalarProperty Name="horaTrabajada" ColumnName="horaTrabajada" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TB_Info" FunctionName="ReportSupModel.Store.TB_Info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ReportSupModel.TB_Info_Result">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+                <ScalarProperty Name="EmployDate" ColumnName="EmployDate" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Educated" ColumnName="Educated" />
+                <ScalarProperty Name="Polity" ColumnName="Polity" />
+                <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+                <ScalarProperty Name="IsAtt" ColumnName="IsAtt" />
+                <ScalarProperty Name="Isovertime" ColumnName="Isovertime" />
+                <ScalarProperty Name="Isrest" ColumnName="Isrest" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+                <ScalarProperty Name="Cardnum" ColumnName="Cardnum" />
+                <ScalarProperty Name="Machineid" ColumnName="Machineid" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+                <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+                <ScalarProperty Name="workdaylong" ColumnName="workdaylong" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
